@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1461359776 source:c:\users\mohamed\documents\workspace\phase2\rule.cpp
+	"Rule.h"
+
+1461380274 c:\users\mohamed\documents\workspace\phase2\rule.h
+	<vector>
+	<map>
+	<string>
+
+1461380718 source:c:\users\mohamed\documents\workspace\phase2\main.cpp
+	<iostream>
+	"RulesParser.h"
+
+1461383163 source:c:\users\mohamed\documents\workspace\phase2\rulesparser.cpp
+	"RulesParser.h"
+	<fstream>
+	<sstream>
+	"Errors.h"
+	<iostream>
+
+1461383597 c:\users\mohamed\documents\workspace\phase2\rulesparser.h
+	"Rule.h"
+	<ostream>
+
+1461383176 c:\users\mohamed\documents\workspace\phase2\errors.h
+	<ostream>
+
