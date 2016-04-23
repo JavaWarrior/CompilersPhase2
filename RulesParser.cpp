@@ -160,7 +160,11 @@ string RulesParser::addSpaces(string str)
 {
     for(int i = 0 ; i < str.size() ; i++)
     {
-        if(str[i] == '|' &&(i > 0 && str[i-1] != '\\'))
+        if(i < str.size()-1 && str[i] == '\\' && str[i+1] == 'L')
+        {
+            i++;
+        }
+        else if(str[i] == '|' &&(i > 0 && str[i-1] != '\\'))
         {
             str.insert(i," ");
             str.insert(i+1," ");

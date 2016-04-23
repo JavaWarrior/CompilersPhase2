@@ -1,0 +1,21 @@
+#E = T E1
+#E1 = '+' T E1 | \L
+#T = F T1
+#T1 = '*' F T1 | \L
+#F = '(' E ')' | 'id'
+
+E (not terminal) : T E1 
+ first : (  0 |id  0 |
+ follow : $   | )   | 
+E1 (not terminal) : + T E1  |  
+ first : +  0 |  1 |
+ follow : $   | )   | 
+F (not terminal) : ( E )  | id 
+ first : (  0 |id  1 |
+ follow : $   | +   | *   | )   | 
+T (not terminal) : F T1 
+ first : (  0 |id  0 |
+ follow : $   | +   | )   | 
+T1 (not terminal) : * F T1  |  
+ first :   1 |*  0 |
+ follow : $   | +   | )   | 

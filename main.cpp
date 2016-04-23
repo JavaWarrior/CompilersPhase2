@@ -6,7 +6,8 @@ using namespace std;
 int main()
 {
     RulesParser * rParser = new RulesParser;
-    rParser->match("input.txt");
+    rParser->match("abdo.txt");
     rParser->printGrammar(cout);
     return 0;
 }
+
