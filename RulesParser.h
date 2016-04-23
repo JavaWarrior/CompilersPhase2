@@ -1,10 +1,7 @@
 #ifndef RULESPARSER_H
 #define RULESPARSER_H
 
-/** to do
-    the first thing is to put spaces between | and any thing else
-    then spaces between capital letters and anything else
- **/
+
 #include "Rule.h"
 #include <ostream>
 class RulesParser

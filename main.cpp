@@ -1,6 +1,6 @@
 #include <iostream>
 #include "RulesParser.h"
-
+#include "TableRule.h"
 using namespace std;
 
 int main()

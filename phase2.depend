@@ -7,11 +7,12 @@
 	<map>
 	<string>
 
-1461380718 source:c:\users\mohamed\documents\workspace\phase2\main.cpp
+1461421745 source:c:\users\mohamed\documents\workspace\phase2\main.cpp
 	<iostream>
 	"RulesParser.h"
+	"TableRule.h"
 
-1461383163 source:c:\users\mohamed\documents\workspace\phase2\rulesparser.cpp
+1461420520 source:c:\users\mohamed\documents\workspace\phase2\rulesparser.cpp
 	"RulesParser.h"
 	<fstream>
 	<sstream>
@@ -24,4 +25,8 @@
 
 1461383176 c:\users\mohamed\documents\workspace\phase2\errors.h
 	<ostream>
+
+1461421975 c:\users\mohamed\documents\workspace\phase2\tablerule.h
+	"Rule.h"
+	<map>
 
