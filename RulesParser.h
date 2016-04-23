@@ -24,7 +24,7 @@ class RulesParser
     private:
         string addSpaces(string str);
         bool isCap(char x){return (x >= 'A' && x <= 'Z') || x == '_';}
-
+        void checkEpsilon();
 };
 
 #endif // RULESPARSER_H

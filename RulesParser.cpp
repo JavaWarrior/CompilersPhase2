@@ -31,6 +31,7 @@ void RulesParser::match(char * path )
     typedef enum {STR, EQUAL, OR, NA, NEWLINE} statesEnum;
     statesEnum curState = NA, lastState = NA;
     string token,lastToken;
+
     Rule * curRule;
 
     while(getline(inpFile,line))
@@ -128,6 +129,7 @@ void RulesParser::match(char * path )
         lineCounter++;
     }
 
+    checkEpsilon();
 }
 
 void RulesParser::printGrammar(ostream & out)
@@ -176,4 +178,17 @@ string RulesParser::addSpaces(string str)
         }
     }
     return str;
+}
+
+void RulesParser::checkEpsilon()
+{
+    if(RulesMap.find("\\L") != RulesMap.end())
+    {
+        RulesMap["\\L"]->nodeType = Rule::EPSILON;
+    }
+    else
+    {
+        RulesMap["\\L"] = new Rule(Rule::EPSILON,"\\L");
+    }
+
 }

@@ -10,7 +10,7 @@ class Rule
 {
     public:
         /* defining whether the Rule is Terminal or non-Terminal or a '$' */
-        typedef enum {terminal, nonTerminal, finalNode} nodeTypeEnum;
+        typedef enum {terminal, nonTerminal, finalNode, EPSILON} nodeTypeEnum;
         nodeTypeEnum nodeType;
 
         /* container of the productions of this rule*/
