@@ -93,6 +93,7 @@ void RulesParser::match(char * path )
                     else
                     {
                         r = new Rule(Rule::terminal, token);
+                        RulesMap[token] = r;
                     }
                     curRule->productions.resize(curRule->productions.size()+1);
                     curRule->productions[curRule->productions.size()-1].push_back(r);
