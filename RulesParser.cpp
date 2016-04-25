@@ -3,6 +3,8 @@
 #include <sstream>
 #include "Errors.h"
 #include <iostream>
+#include <cstdlib>
+#include <stack>
 
 using namespace std;
 
@@ -26,7 +28,7 @@ void RulesParser::match(char * path )
     ifstream inpFile (path);
     string line;
 
-    int lineCounter = 0;
+    lineCounter = 0;
 
     typedef enum {STR, EQUAL, OR, NA, NEWLINE} statesEnum;
     statesEnum curState = NA, lastState = NA;
@@ -49,7 +51,7 @@ void RulesParser::match(char * path )
                 if(curState != STR)
                 {
                     /* ::= str */
-                    return Errors::printError(EXPECTED_STRING_BEFORE_EQUAL, lineCounter, cout);
+                    return Errors::printErrorWithLine(EXPECTED_STRING_BEFORE_EQUAL, lineCounter, cout);
                 }
                 else
                 {
@@ -75,7 +77,7 @@ void RulesParser::match(char * path )
             {
                 if(curState != NEWLINE && curState != STR)
                 {
-                    return Errors::printError(EXPECTED_STRING_BEFORE_OR, lineCounter, cout);
+                    return Errors::printErrorWithLine(EXPECTED_STRING_BEFORE_OR, lineCounter, cout);
                 }
                 lastState = curState;
                 curState = OR;
@@ -122,16 +124,16 @@ void RulesParser::match(char * path )
         }
         if(curState == OR)
         {
-            return Errors::printError(EXPECTED_STRING_BEFORE_OR, lineCounter, cout);
+            return Errors::printErrorWithLine(EXPECTED_STRING_BEFORE_OR, lineCounter, cout);
         }else if (curState == EQUAL)
         {
-            return Errors::printError(EXPECTED_STRING_BEFORE_EQUAL, lineCounter, cout);
+            return Errors::printErrorWithLine(EXPECTED_STRING_BEFORE_EQUAL, lineCounter, cout);
         }
         curState = NEWLINE;
         lineCounter++;
     }
-
     checkEpsilon();
+    eliminateLeftRecursion();
 }
 
 void RulesParser::printGrammar(ostream & out)
@@ -197,4 +199,137 @@ void RulesParser::checkEpsilon()
         RulesMap["\\L"] = new Rule(Rule::EPSILON,"\\L");
     }
 
+}
+
+void RulesParser::removeDirectLR(Rule * r)
+{
+    /* get productions */
+    Rule::productions_t &prods = r->productions;
+
+    /*name a new Rule to be used in elimination of LR */
+    string x (r->name);
+    x = getNewName(x);
+
+    Rule * extraRule = new Rule(Rule::nonTerminal,x);
+
+    stack <vector<Rule *> > stk;
+
+    /* first we check if there's left recursion */
+    for(int i = 0 ; i < prods.size();i++)
+    {
+        if(prods[i].size() > 0 && prods[i][0] == r )
+        {
+            /* if left recursion in this production */
+            stk.push(prods[i]);
+            prods.erase(prods.begin() + i);
+            i--;
+        }
+    }
+
+    if(prods.size() == 0)
+    {
+        /* all productions is left recursive */
+        return Errors::printErrorWithString(WRONG_GRAMMAR_ALL_LR, r->name, cout);
+    }
+    if(stk.size() == 0 )
+    {
+        delete extraRule;
+        return; /* no Left recursion */
+    }
+    for(int i =0 ;i < prods.size() ; i++)
+    {
+        if(prods[i][0]->nodeType == Rule::EPSILON)
+            prods[i].erase(prods[i].begin());   /* if the node has epsilon in it the remove it then only A' will be inserted */
+        prods[i].push_back(extraRule);  //A -> B1A'|...|BnA'
+    }
+    while(!stk.empty())
+    {
+        vector< Rule *> LR = stk.top();stk.pop();
+        //A' -> aA'|e
+        LR.erase(LR.begin());
+        LR.push_back(extraRule);
+        extraRule->productions.push_back(LR);
+    }
+    vector<Rule *> vec; vec.push_back(RulesMap["\\L"] );
+    extraRule->productions.push_back(vec); /* insert epsilon */
+    RulesMap[extraRule->name] = extraRule;
+}
+
+/* generate new name for this Rule that doesn't conflict with other rules */
+string RulesParser::getNewName(string x)
+{
+    while(RulesMap.find(x) != RulesMap.end())
+    {
+        srand(rand());
+        x += (rand()%10 + '0'); /* add random number to the string */
+    }
+    return x;
+}
+
+/* eliminate direct and direct left recursion */
+void RulesParser::eliminateLeftRecursion()
+{
+    vector<Rule *> orderedRules;    /* numbering of rules */
+    for(map<string,Rule *>::iterator it = RulesMap.begin() ; it != RulesMap.end() ;it++)
+    {   /* if rule is non terminal number it */
+        if(it->second->nodeType == Rule::nonTerminal){
+            orderedRules.push_back(it->second);
+        }
+
+    }
+    /* algorithm stated in ref book */
+    for(int i =0  ; i < orderedRules.size() ; i++)
+    {
+        for( int  j = 0 ; j < i ; j++)
+        {
+            /* substitute every resolved rule j into i */
+            substitute(orderedRules[i], orderedRules[j]);
+        }
+        /* remove LR after substitution to mark rule i as LR free */
+        removeDirectLR(orderedRules[i]);
+
+    }
+}
+
+/* substitutes Rule to into Rule from */
+void RulesParser::substitute(Rule * from, Rule * to)
+{
+    stack <pair<vector<Rule *>, int> > stk;
+    /* stack to mark affected productions */
+    for(int i = 0; i < from->productions.size() ; i++)
+    {
+        for(int j = 0 ; j < from->productions[i].size() ; j++)
+        {
+            if(from->productions[i][j] == to)
+            {
+                stk.push(make_pair(from->productions[i],j));
+                from->productions.erase(from->productions.begin() + i);
+                i--;
+                break;
+            }
+        }
+    }
+    while(!stk.empty())
+    {
+        vector<Rule *> vc = stk.top().first, suffix,prefix;
+        int idx = stk.top().second;
+        stk.pop();
+
+        /* if there's prefix and it isn't epsilon */
+        if(idx > 0 && vc[0]->nodeType==Rule::EPSILON)
+            prefix = vector<Rule*>(vc.begin(), vc.begin() + idx -1);
+        /* if there's a suffix and it isn't epsilon */
+        if(idx < vc.size() -1 && vc[idx+1]->nodeType==Rule::EPSILON)
+            suffix = vector<Rule*>(vc.begin()+idx+1,vc.end());
+
+        vector<Rule *> * tempVec;
+        for(int i = 0  ; i < to->productions.size() ; i++)
+        {
+            tempVec = new vector<Rule *>(prefix.begin(),prefix.end());  /* add prefix */
+            tempVec->insert(tempVec->end(),to->productions[i].begin(), to->productions[i].end()); /* substitute */
+            tempVec->insert(tempVec->end(),suffix.begin(), suffix.end()); /* add suffix */
+            /* add new production to the from rule */
+            from->productions.push_back(*tempVec);
+        }
+    }
 }

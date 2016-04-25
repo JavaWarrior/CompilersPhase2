@@ -13,6 +13,8 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
+					<Add directory="../phase2" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +24,8 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
+					<Add directory="../phase2" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -32,6 +36,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Errors.h" />
+		<Unit filename="Rule.h" />
+		<Unit filename="RulesParser.cpp" />
+		<Unit filename="RulesParser.h" />
+		<Unit filename="TableRule.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

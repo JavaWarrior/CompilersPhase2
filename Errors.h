@@ -6,7 +6,8 @@
             EXPECTED_STRING_BEFORE_EQUAL,
             EXPECTED_STRING_BEFORE_OR,
             EXTRA_STRING_BEFORE_OR,
-            MISSING_OPERATOR
+            MISSING_OPERATOR,
+            WRONG_GRAMMAR_ALL_LR
             } erroEnum;
 
 class Errors
@@ -15,9 +16,22 @@ class Errors
 
         Errors();
         virtual ~Errors() {}
-        static void printError(erroEnum errorNum, int lineNum, ostream & str)
+        static void printErrorWithLine(erroEnum errorNum, int lineNum, ostream & str)
         {
             str<<" ** error: line: "<<lineNum<<" :";
+            ErrorCodeToStr(errorNum,str);
+        }
+        static void printErrorWithString(erroEnum errorNum, string arr, ostream & str)
+        {
+            str<<" ** error: in: "<<arr<<" :";
+            ErrorCodeToStr(errorNum,str);
+        }
+
+    protected:
+
+    private:
+        static void ErrorCodeToStr(erroEnum errorNum,ostream & str)
+        {
             switch(errorNum)
             {
             case EXPECTED_STRING_BEFORE_EQUAL:
@@ -32,11 +46,11 @@ class Errors
             case MISSING_OPERATOR:
                 str<<"missing operator " <<endl;
                 break;
+            case WRONG_GRAMMAR_ALL_LR:
+                str<<"wrong grammar, all productions is left recursive."<<endl;
+                break;
             }
         }
-    protected:
-
-    private:
 };
 
 #endif // ERRORS_H
