@@ -260,8 +260,7 @@ string RulesParser::getNewName(string x)
 {
     while(RulesMap.find(x) != RulesMap.end())
     {
-        srand(rand());
-        x += (rand()%10 + '0'); /* add random number to the string */
+        x += '\''; /* add random number to the string */
     }
     return x;
 }

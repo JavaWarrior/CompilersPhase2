@@ -22,7 +22,7 @@ class RulesParser
         int lineCounter = 0;
 
         string addSpaces(string str);
-        bool isCap(char x){return (x >= 'A' && x <= 'Z') || x == '_' ||(x >= '0' && x <= '9');}
+        bool isCap(char x){return (x >= 'A' && x <= 'Z') || x == '_' ||(x >= '0' && x <= '9')||(x == '\'');}
         void checkEpsilon();
 
         string getNewName(string x);
