@@ -7,12 +7,13 @@
 	<map>
 	<string>
 
-1461551922 source:c:\users\mohamed\documents\workspace\phase2\main.cpp
+1461943570 source:c:\users\mohamed\documents\workspace\phase2\main.cpp
 	<iostream>
 	"RulesParser.h"
 	"TableRule.h"
+	<fstream>
 
-1461582857 source:c:\users\mohamed\documents\workspace\phase2\rulesparser.cpp
+1461943284 source:c:\users\mohamed\documents\workspace\phase2\rulesparser.cpp
 	"RulesParser.h"
 	<fstream>
 	<sstream>

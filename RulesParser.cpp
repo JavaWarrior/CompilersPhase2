@@ -315,10 +315,10 @@ void RulesParser::substitute(Rule * from, Rule * to)
         stk.pop();
 
         /* if there's prefix and it isn't epsilon */
-        if(idx > 0 && vc[0]->nodeType==Rule::EPSILON)
-            prefix = vector<Rule*>(vc.begin(), vc.begin() + idx -1);
+        if(idx > 0 && vc[0]->nodeType!=Rule::EPSILON)
+            prefix = vector<Rule*>(vc.begin(), vc.begin() + idx);
         /* if there's a suffix and it isn't epsilon */
-        if(idx < vc.size() -1 && vc[idx+1]->nodeType==Rule::EPSILON)
+        if(idx < vc.size() -1 && vc[idx+1]->nodeType!=Rule::EPSILON)
             suffix = vector<Rule*>(vc.begin()+idx+1,vc.end());
 
         vector<Rule *> * tempVec;
