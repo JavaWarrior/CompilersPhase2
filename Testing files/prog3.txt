@@ -1,0 +1,21 @@
+#bexpr = bterm bexpr1
+#bexpr1 = 'or' bterm bexpr1 | \L
+#bterm = bfactor bterm1
+#bterm1 = 'and' bfactor bterm1 | \L
+#bfactor = 'not' bfactor | '(' bexpr ')' | 't' | 'f'
+
+bexpr (not terminal) : bterm bexpr1 
+ first : not  0 |(  0 |t  0 |f  0 |
+ follow : $   | )   | 
+bexpr1 (not terminal) : or bterm bexpr1  |  
+ first : or  0 |  1 |
+ follow : $   | )   | 
+bfactor (not terminal) : not bfactor  | ( bexpr )  | t  | f 
+ first : not  0 |(  1 |t  2 |f  3 |
+ follow : $   | or   | and   | )   | 
+bterm (not terminal) : bfactor bterm1 
+ first : not  0 |(  0 |t  0 |f  0 |
+ follow : $   | or   | )   | 
+bterm1 (not terminal) : and bfactor bterm1  |  
+ first :   1 |and  0 |
+ follow : $   | or   | )   | 

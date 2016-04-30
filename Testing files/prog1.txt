@@ -1,0 +1,29 @@
+#E = T E1
+#E1 = '+' E | \L
+#T  = F T1
+#T1 = T | \L
+#F  = P F1
+#F1 = '*' F | \L
+#P  = '(' E ')' | 'a' | 'b' | 'em'
+
+E (not terminal) : T E1 
+ first : a  0 |b  0 |em  0 |(  0 |
+ follow : $   | )   | 
+E1 (not terminal) : + E  |  
+ first : +  0 |  1 |
+ follow : $   | )   | 
+F (not terminal) : P F1 
+ first : a  0 |b  0 |em  0 |(  0 |
+ follow : a   | b   | em   | $   | +   | (   | )   | 
+F1 (not terminal) : * F  |  
+ first :   1 |*  0 |
+ follow : a   | b   | em   | $   | +   | (   | )   | 
+P (not terminal) : ( E )  | a  | b  | em 
+ first : a  1 |b  2 |em  3 |(  0 |
+ follow : a   | b   | em   | $   | +   | *   | (   | )   | 
+T (not terminal) : F T1 
+ first : a  0 |b  0 |em  0 |(  0 |
+ follow : $   | +   | )   | 
+T1 (not terminal) : T  |  
+ first : a  0 |b  0 |em  0 |  1 |(  0 |
+ follow : $   | +   | )   | 

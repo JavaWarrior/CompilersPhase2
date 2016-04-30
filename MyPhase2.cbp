@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="MyPhase2" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/MyPhase2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/MyPhase2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-std=c++11" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="DFABuilder.cpp" />
+		<Unit filename="DFABuilder.h" />
+		<Unit filename="Errors.h" />
+		<Unit filename="Fol_fst.cpp" />
+		<Unit filename="Fol_fst.h" />
+		<Unit filename="InputTokenizer.cpp" />
+		<Unit filename="InputTokenizer.h" />
+		<Unit filename="LeftFactoring.cpp" />
+		<Unit filename="LeftFactoring.h" />
+		<Unit filename="Match.cpp" />
+		<Unit filename="Match.h" />
+		<Unit filename="NFA2DFA.cpp" />
+		<Unit filename="NFA2DFA.h" />
+		<Unit filename="NFABuilder.cpp" />
+		<Unit filename="NFABuilder.h" />
+		<Unit filename="Rule.h" />
+		<Unit filename="RulesParser.cpp" />
+		<Unit filename="RulesParser.h" />
+		<Unit filename="TableRule.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="outputParser.cpp" />
+		<Unit filename="outputParser.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

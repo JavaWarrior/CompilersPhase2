@@ -1,0 +1,266 @@
+# depslib dependency file v1.0
+1461535077 source:c:\users\temp.dell-pc\desktop\myphase2\fol_fst.cpp
+	<bits/stdc++.h>
+	"RULE.h"
+	"Fol_fst.h"
+	"RulesParser.h"
+
+1461451730 c:\users\temp.dell-pc\desktop\myphase2\rule.h
+	<vector>
+	<map>
+	<string>
+
+1461449964 c:\users\temp.dell-pc\desktop\myphase2\fol_fst.h
+	<bits/stdc++.h>
+	"RulesParser.h"
+
+1461933427 c:\users\temp.dell-pc\desktop\myphase2\rulesparser.h
+	"Rule.h"
+	<ostream>
+
+1461942187 source:c:\users\temp.dell-pc\desktop\myphase2\leftfactoring.cpp
+	"LeftFactoring.h"
+
+1461942181 c:\users\temp.dell-pc\desktop\myphase2\leftfactoring.h
+	<bits/stdc++.h>
+	"RULE.h"
+	"Match.h"
+	"RulesParser.h"
+
+1461938253 c:\users\temp.dell-pc\desktop\myphase2\match.h
+	"RULE.h"
+	<bits/stdc++.h>
+
+1461944942 source:c:\users\temp.dell-pc\desktop\myphase2\main.cpp
+	<iostream>
+	"LeftFactoring.h"
+	"RulesParser.h"
+	"TableRule.h"
+	"Fol_fst.h"
+	"Match.h"
+
+1461451680 c:\users\temp.dell-pc\desktop\myphase2\tablerule.h
+	"Rule.h"
+	<map>
+
+1461941104 source:c:\users\temp.dell-pc\desktop\myphase2\match.cpp
+	"Match.h"
+
+1461944327 source:c:\users\temp.dell-pc\desktop\myphase2\rulesparser.cpp
+	"RulesParser.h"
+	<fstream>
+	<sstream>
+	"Errors.h"
+	<iostream>
+	<cstdlib>
+	<stack>
+
+1461936152 c:\users\temp.dell-pc\desktop\myphase2\errors.h
+	<ostream>
+
+1461351826 source:c:\users\temp.dell-pc\desktop\myphase2\dfabuilder.cpp
+	"DFABuilder.h"
+
+1461351826 c:\users\temp.dell-pc\desktop\myphase2\dfabuilder.h
+	"NFABuilder.h"
+
+1461351826 c:\users\temp.dell-pc\desktop\myphase2\nfabuilder.h
+	"InputTokenizer.h"
+	<vector>
+	<set>
+	<stack>
+
+1461351826 c:\users\temp.dell-pc\desktop\myphase2\inputtokenizer.h
+	<map>
+	<vector>
+	<string>
+
+1461351826 source:c:\users\temp.dell-pc\desktop\myphase2\inputtokenizer.cpp
+	"InputTokenizer.h"
+	<iostream>
+	<fstream>
+	<sstream>
+
+1461351826 source:c:\users\temp.dell-pc\desktop\myphase2\nfabuilder.cpp
+	"NFABuilder.h"
+	<stack>
+	<iostream>
+
+1461351826 source:c:\users\temp.dell-pc\desktop\myphase2\outputparser.cpp
+	"outputParser.h"
+	<fstream>
+	<iostream>
+
+1461351826 c:\users\temp.dell-pc\desktop\myphase2\outputparser.h
+	"NFABuilder.h"
+	<map>
+
+1461980305 source:h:\trash\myphase2\fol_fst.cpp
+	<bits/stdc++.h>
+	"RULE.h"
+	"Fol_fst.h"
+	"RulesParser.h"
+
+1461451730 h:\trash\myphase2\rule.h
+	<vector>
+	<map>
+	<string>
+
+1461980319 h:\trash\myphase2\fol_fst.h
+	<bits/stdc++.h>
+	"RulesParser.h"
+
+1461933428 h:\trash\myphase2\rulesparser.h
+	"Rule.h"
+	<ostream>
+
+1461942188 source:h:\trash\myphase2\leftfactoring.cpp
+	"LeftFactoring.h"
+
+1461942182 h:\trash\myphase2\leftfactoring.h
+	<bits/stdc++.h>
+	"RULE.h"
+	"Match.h"
+	"RulesParser.h"
+
+1461938254 h:\trash\myphase2\match.h
+	"RULE.h"
+	<bits/stdc++.h>
+
+1461970030 source:h:\trash\myphase2\match.cpp
+	"Match.h"
+
+1461981081 source:h:\trash\myphase2\rulesparser.cpp
+	"RulesParser.h"
+	<fstream>
+	<sstream>
+	"Errors.h"
+	<iostream>
+	<cstdlib>
+	<stack>
+
+1461936154 h:\trash\myphase2\errors.h
+	<ostream>
+
+1461981075 source:h:\trash\myphase2\main.cpp
+	<iostream>
+	<fstream>
+	"LeftFactoring.h"
+	"RulesParser.h"
+	"TableRule.h"
+	"Fol_fst.h"
+	"Match.h"
+
+1461451680 h:\trash\myphase2\tablerule.h
+	"Rule.h"
+	<map>
+
+1461983721 source:c:\users\temp.dell-pc\downloads\myphase2\myphase2\leftfactoring.cpp
+	"LeftFactoring.h"
+
+1461942182 c:\users\temp.dell-pc\downloads\myphase2\myphase2\leftfactoring.h
+	<bits/stdc++.h>
+	"RULE.h"
+	"Match.h"
+	"RulesParser.h"
+
+1461451730 c:\users\temp.dell-pc\downloads\myphase2\myphase2\rule.h
+	<vector>
+	<map>
+	<string>
+
+1461938254 c:\users\temp.dell-pc\downloads\myphase2\myphase2\match.h
+	"RULE.h"
+	<bits/stdc++.h>
+
+1461933428 c:\users\temp.dell-pc\downloads\myphase2\myphase2\rulesparser.h
+	"Rule.h"
+	<ostream>
+
+1461980305 source:c:\users\temp.dell-pc\downloads\myphase2\myphase2\fol_fst.cpp
+	<bits/stdc++.h>
+	"RULE.h"
+	"Fol_fst.h"
+	"RulesParser.h"
+
+1461980319 c:\users\temp.dell-pc\downloads\myphase2\myphase2\fol_fst.h
+	<bits/stdc++.h>
+	"RulesParser.h"
+
+1461984571 source:c:\users\temp.dell-pc\downloads\myphase2\myphase2\match.cpp
+	"Match.h"
+
+1461981081 source:c:\users\temp.dell-pc\downloads\myphase2\myphase2\rulesparser.cpp
+	"RulesParser.h"
+	<fstream>
+	<sstream>
+	"Errors.h"
+	<iostream>
+	<cstdlib>
+	<stack>
+
+1461936154 c:\users\temp.dell-pc\downloads\myphase2\myphase2\errors.h
+	<ostream>
+
+1461985232 source:c:\users\temp.dell-pc\downloads\myphase2\myphase2\main.cpp
+	<iostream>
+	<fstream>
+	"LeftFactoring.h"
+	"RulesParser.h"
+	"TableRule.h"
+	"Fol_fst.h"
+	"Match.h"
+
+1461451680 c:\users\temp.dell-pc\downloads\myphase2\myphase2\tablerule.h
+	"Rule.h"
+	<map>
+
+1461351826 source:c:\users\temp.dell-pc\downloads\myphase2\myphase2\dfabuilder.cpp
+	"DFABuilder.h"
+
+1461351826 c:\users\temp.dell-pc\downloads\myphase2\myphase2\dfabuilder.h
+	"NFABuilder.h"
+
+1461351826 c:\users\temp.dell-pc\downloads\myphase2\myphase2\nfabuilder.h
+	"InputTokenizer.h"
+	<vector>
+	<set>
+	<stack>
+
+1461351826 c:\users\temp.dell-pc\downloads\myphase2\myphase2\inputtokenizer.h
+	<map>
+	<vector>
+	<string>
+
+1461351826 source:c:\users\temp.dell-pc\downloads\myphase2\myphase2\inputtokenizer.cpp
+	"InputTokenizer.h"
+	<iostream>
+	<fstream>
+	<sstream>
+
+1461351826 source:c:\users\temp.dell-pc\downloads\myphase2\myphase2\nfabuilder.cpp
+	"NFABuilder.h"
+	<stack>
+	<iostream>
+
+1461985189 source:c:\users\temp.dell-pc\downloads\myphase2\myphase2\nfa2dfa.cpp
+	<bits/stdc++.h>
+	"InputTokenizer.h"
+	"NFABuilder.h"
+	"NFA2DFA.h"
+	"outputParser.h"
+
+1461973192 c:\users\temp.dell-pc\downloads\myphase2\myphase2\nfa2dfa.h
+	<bits/stdc++.h>
+	"InputTokenizer.h"
+	"NFABuilder.h"
+
+1461970754 c:\users\temp.dell-pc\downloads\myphase2\myphase2\outputparser.h
+	"NFABuilder.h"
+	<map>
+
+1461975409 source:c:\users\temp.dell-pc\downloads\myphase2\myphase2\outputparser.cpp
+	"outputParser.h"
+	<fstream>
+	<iostream>
+

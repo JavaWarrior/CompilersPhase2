@@ -134,6 +134,7 @@ void RulesParser::match(char * path )
     }
     checkEpsilon();
     eliminateLeftRecursion();
+
 }
 
 void RulesParser::printGrammar(ostream & out)
@@ -325,10 +326,12 @@ void RulesParser::substitute(Rule * from, Rule * to)
         for(int i = 0  ; i < to->productions.size() ; i++)
         {
             tempVec = new vector<Rule *>(prefix.begin(),prefix.end());  /* add prefix */
-            tempVec->insert(tempVec->end(),to->productions[i].begin(), to->productions[i].end()); /* substitute */
+            if(to->productions[i][0]->nodeType != Rule::EPSILON)
+                tempVec->insert(tempVec->end(),to->productions[i].begin(), to->productions[i].end()); /* substitute */
             tempVec->insert(tempVec->end(),suffix.begin(), suffix.end()); /* add suffix */
             /* add new production to the from rule */
-            from->productions.push_back(*tempVec);
+            if(!tempVec->empty())
+                from->productions.push_back(*tempVec);
         }
     }
 }

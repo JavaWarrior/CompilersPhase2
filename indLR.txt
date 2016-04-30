@@ -1,2 +1,2 @@
 S ::= X a | b
-X ::= X c | S d | \L
+X ::= X c | X d | \L

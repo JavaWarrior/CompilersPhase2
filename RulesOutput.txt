@@ -1,0 +1,71 @@
+1 - int
+METHOD_BODY -->  STATEMENT_LIST
+STATEMENT_LIST -->  int IDENTIFIER ; STATEMENT_LIST'''''''''
+
+
+
+2 - id
+Error:(illegal STATEMENT_LIST''''''''') -- discard id
+
+
+3 - ;
+Error:(illegal STATEMENT_LIST''''''''') -- discard ;
+
+
+4 - if
+STATEMENT_LIST''''''''' -->  STATEMENT_LIST
+STATEMENT_LIST -->  if ( STATEMENT_LIST'''
+
+
+
+5 - (
+
+
+
+6 - id
+Error:(illegal STATEMENT_LIST''') -- discard id
+
+
+7 - relop
+Error:(illegal STATEMENT_LIST''') -- discard relop
+
+
+8 - num
+Error:(illegal STATEMENT_LIST''') -- discard num
+
+
+9 - )
+Error:(illegal STATEMENT_LIST''') -- discard )
+
+
+10 - {
+Error:(illegal STATEMENT_LIST''') -- discard {
+
+
+11 - int
+Error:(illegal STATEMENT_LIST''') -- discard int
+
+
+12 - id
+Error:(illegal STATEMENT_LIST''') -- discard id
+
+
+13 - assign
+Error:(illegal STATEMENT_LIST''') -- discard assign
+
+
+14 - num
+Error:(illegal STATEMENT_LIST''') -- discard num
+
+
+15 - ;
+Error:(illegal STATEMENT_LIST''') -- discard ;
+
+
+16 - }
+Error:(illegal STATEMENT_LIST''') -- discard }
+
+
+
+Accepted
+

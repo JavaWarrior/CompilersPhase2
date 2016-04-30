@@ -1,0 +1,714 @@
+Table[ ASSIGNMENT , IDENTIFIER ]
+ASSIGNMENT---> IDENTIFIER=EXPRESSION;
+*******************************************
+Table[ DECLARATION , float ]
+DECLARATION---> PRIMITIVE_TYPEIDENTIFIER;
+*******************************************
+Table[ DECLARATION , int ]
+DECLARATION---> PRIMITIVE_TYPEIDENTIFIER;
+*******************************************
+Table[ EXPRESSION , != ]
+EXPRESSION---> SYNCH
+*******************************************
+Table[ EXPRESSION , % ]
+EXPRESSION---> SYNCH
+*******************************************
+Table[ EXPRESSION , && ]
+EXPRESSION---> SYNCH
+*******************************************
+Table[ EXPRESSION , ( ]
+EXPRESSION---> (EXPRESSION)EXPRESSION'
+*******************************************
+Table[ EXPRESSION , ) ]
+EXPRESSION---> SYNCH
+*******************************************
+Table[ EXPRESSION , * ]
+EXPRESSION---> SYNCH
+*******************************************
+Table[ EXPRESSION , + ]
+EXPRESSION---> SYNCH
+*******************************************
+Table[ EXPRESSION , - ]
+EXPRESSION---> SYNCH
+*******************************************
+Table[ EXPRESSION , / ]
+EXPRESSION---> SYNCH
+*******************************************
+Table[ EXPRESSION , ; ]
+EXPRESSION---> SYNCH
+*******************************************
+Table[ EXPRESSION , < ]
+EXPRESSION---> SYNCH
+*******************************************
+Table[ EXPRESSION , <= ]
+EXPRESSION---> SYNCH
+*******************************************
+Table[ EXPRESSION , == ]
+EXPRESSION---> SYNCH
+*******************************************
+Table[ EXPRESSION , > ]
+EXPRESSION---> SYNCH
+*******************************************
+Table[ EXPRESSION , >= ]
+EXPRESSION---> SYNCH
+*******************************************
+Table[ EXPRESSION , IDENTIFIER ]
+EXPRESSION---> IDENTIFIEREXPRESSION'
+*******************************************
+Table[ EXPRESSION , NUMBER ]
+EXPRESSION---> NUMBEREXPRESSION'
+*******************************************
+Table[ EXPRESSION , \| ]
+EXPRESSION---> SYNCH
+*******************************************
+Table[ EXPRESSION' , != ]
+EXPRESSION'---> INFIX_OPERATOREXPRESSIONEXPRESSION'\L
+*******************************************
+Table[ EXPRESSION' , % ]
+EXPRESSION'---> INFIX_OPERATOREXPRESSIONEXPRESSION'\L
+*******************************************
+Table[ EXPRESSION' , && ]
+EXPRESSION'---> INFIX_OPERATOREXPRESSIONEXPRESSION'\L
+*******************************************
+Table[ EXPRESSION' , ) ]
+EXPRESSION'---> \L
+*******************************************
+Table[ EXPRESSION' , * ]
+EXPRESSION'---> INFIX_OPERATOREXPRESSIONEXPRESSION'\L
+*******************************************
+Table[ EXPRESSION' , + ]
+EXPRESSION'---> INFIX_OPERATOREXPRESSIONEXPRESSION'\L
+*******************************************
+Table[ EXPRESSION' , - ]
+EXPRESSION'---> INFIX_OPERATOREXPRESSIONEXPRESSION'\L
+*******************************************
+Table[ EXPRESSION' , / ]
+EXPRESSION'---> INFIX_OPERATOREXPRESSIONEXPRESSION'\L
+*******************************************
+Table[ EXPRESSION' , ; ]
+EXPRESSION'---> \L
+*******************************************
+Table[ EXPRESSION' , < ]
+EXPRESSION'---> INFIX_OPERATOREXPRESSIONEXPRESSION'\L
+*******************************************
+Table[ EXPRESSION' , <= ]
+EXPRESSION'---> INFIX_OPERATOREXPRESSIONEXPRESSION'\L
+*******************************************
+Table[ EXPRESSION' , == ]
+EXPRESSION'---> INFIX_OPERATOREXPRESSIONEXPRESSION'\L
+*******************************************
+Table[ EXPRESSION' , > ]
+EXPRESSION'---> INFIX_OPERATOREXPRESSIONEXPRESSION'\L
+*******************************************
+Table[ EXPRESSION' , >= ]
+EXPRESSION'---> INFIX_OPERATOREXPRESSIONEXPRESSION'\L
+*******************************************
+Table[ EXPRESSION' , \| ]
+EXPRESSION'---> INFIX_OPERATOREXPRESSIONEXPRESSION'\L
+*******************************************
+Table[ IF , if ]
+IF---> if(IF'
+*******************************************
+Table[ IF' , ( ]
+IF'---> (EXPRESSION)EXPRESSION'){STATEMENT}else{STATEMENT}
+*******************************************
+Table[ IF' , IDENTIFIER ]
+IF'---> IDENTIFIEREXPRESSION'){STATEMENT}else{STATEMENT}
+*******************************************
+Table[ IF' , NUMBER ]
+IF'---> NUMBEREXPRESSION'){STATEMENT}else{STATEMENT}
+*******************************************
+Table[ INFIX_OPERATOR , != ]
+INFIX_OPERATOR---> !=
+*******************************************
+Table[ INFIX_OPERATOR , % ]
+INFIX_OPERATOR---> %
+*******************************************
+Table[ INFIX_OPERATOR , && ]
+INFIX_OPERATOR---> &&
+*******************************************
+Table[ INFIX_OPERATOR , ( ]
+INFIX_OPERATOR---> SYNCH
+*******************************************
+Table[ INFIX_OPERATOR , * ]
+INFIX_OPERATOR---> *
+*******************************************
+Table[ INFIX_OPERATOR , + ]
+INFIX_OPERATOR---> +
+*******************************************
+Table[ INFIX_OPERATOR , - ]
+INFIX_OPERATOR---> -
+*******************************************
+Table[ INFIX_OPERATOR , / ]
+INFIX_OPERATOR---> /
+*******************************************
+Table[ INFIX_OPERATOR , < ]
+INFIX_OPERATOR---> <
+*******************************************
+Table[ INFIX_OPERATOR , <= ]
+INFIX_OPERATOR---> <=
+*******************************************
+Table[ INFIX_OPERATOR , == ]
+INFIX_OPERATOR---> ==
+*******************************************
+Table[ INFIX_OPERATOR , > ]
+INFIX_OPERATOR---> >
+*******************************************
+Table[ INFIX_OPERATOR , >= ]
+INFIX_OPERATOR---> >=
+*******************************************
+Table[ INFIX_OPERATOR , IDENTIFIER ]
+INFIX_OPERATOR---> SYNCH
+*******************************************
+Table[ INFIX_OPERATOR , NUMBER ]
+INFIX_OPERATOR---> SYNCH
+*******************************************
+Table[ INFIX_OPERATOR , \| ]
+INFIX_OPERATOR---> \|
+*******************************************
+Table[ METHOD_BODY , $ ]
+METHOD_BODY---> SYNCH
+*******************************************
+Table[ METHOD_BODY , IDENTIFIER ]
+METHOD_BODY---> STATEMENT_LIST
+*******************************************
+Table[ METHOD_BODY , float ]
+METHOD_BODY---> STATEMENT_LIST
+*******************************************
+Table[ METHOD_BODY , if ]
+METHOD_BODY---> STATEMENT_LIST
+*******************************************
+Table[ METHOD_BODY , int ]
+METHOD_BODY---> STATEMENT_LIST
+*******************************************
+Table[ METHOD_BODY , while ]
+METHOD_BODY---> STATEMENT_LIST
+*******************************************
+Table[ PRIMITIVE_TYPE , IDENTIFIER ]
+PRIMITIVE_TYPE---> SYNCH
+*******************************************
+Table[ PRIMITIVE_TYPE , float ]
+PRIMITIVE_TYPE---> float
+*******************************************
+Table[ PRIMITIVE_TYPE , int ]
+PRIMITIVE_TYPE---> int
+*******************************************
+Table[ STATEMENT , IDENTIFIER ]
+STATEMENT---> IDENTIFIER=STATEMENT'
+*******************************************
+Table[ STATEMENT , float ]
+STATEMENT---> floatIDENTIFIER;
+*******************************************
+Table[ STATEMENT , if ]
+STATEMENT---> if(STATEMENT''
+*******************************************
+Table[ STATEMENT , int ]
+STATEMENT---> intIDENTIFIER;
+*******************************************
+Table[ STATEMENT , while ]
+STATEMENT---> WHILE
+*******************************************
+Table[ STATEMENT , } ]
+STATEMENT---> SYNCH
+*******************************************
+Table[ STATEMENT' , ( ]
+STATEMENT'---> (EXPRESSION)EXPRESSION';
+*******************************************
+Table[ STATEMENT' , IDENTIFIER ]
+STATEMENT'---> IDENTIFIEREXPRESSION';
+*******************************************
+Table[ STATEMENT' , NUMBER ]
+STATEMENT'---> NUMBEREXPRESSION';
+*******************************************
+Table[ STATEMENT' , } ]
+STATEMENT'---> SYNCH
+*******************************************
+Table[ STATEMENT'' , ( ]
+STATEMENT''---> (EXPRESSION)EXPRESSION'){STATEMENT}else{STATEMENT}
+*******************************************
+Table[ STATEMENT'' , IDENTIFIER ]
+STATEMENT''---> IDENTIFIEREXPRESSION'){STATEMENT}else{STATEMENT}
+*******************************************
+Table[ STATEMENT'' , NUMBER ]
+STATEMENT''---> NUMBEREXPRESSION'){STATEMENT}else{STATEMENT}
+*******************************************
+Table[ STATEMENT'' , } ]
+STATEMENT''---> SYNCH
+*******************************************
+Table[ STATEMENT_LIST , $ ]
+STATEMENT_LIST---> SYNCH
+*******************************************
+Table[ STATEMENT_LIST , IDENTIFIER ]
+STATEMENT_LIST---> IDENTIFIER=STATEMENT_LIST'
+*******************************************
+Table[ STATEMENT_LIST , float ]
+STATEMENT_LIST---> floatIDENTIFIER;STATEMENT_LIST'''''''''''
+*******************************************
+Table[ STATEMENT_LIST , if ]
+STATEMENT_LIST---> if(STATEMENT_LIST'''
+*******************************************
+Table[ STATEMENT_LIST , int ]
+STATEMENT_LIST---> intIDENTIFIER;STATEMENT_LIST'''''''''
+*******************************************
+Table[ STATEMENT_LIST , while ]
+STATEMENT_LIST---> WHILESTATEMENT_LIST''''''
+*******************************************
+Table[ STATEMENT_LIST' , $ ]
+STATEMENT_LIST'---> SYNCH
+*******************************************
+Table[ STATEMENT_LIST' , ( ]
+STATEMENT_LIST'---> (EXPRESSION)EXPRESSION';STATEMENT_LIST'''''''
+*******************************************
+Table[ STATEMENT_LIST' , IDENTIFIER ]
+STATEMENT_LIST'---> IDENTIFIEREXPRESSION';STATEMENT_LIST''''
+*******************************************
+Table[ STATEMENT_LIST' , NUMBER ]
+STATEMENT_LIST'---> NUMBEREXPRESSION';STATEMENT_LIST''
+*******************************************
+Table[ STATEMENT_LIST'' , $ ]
+STATEMENT_LIST''---> \L
+*******************************************
+Table[ STATEMENT_LIST'' , IDENTIFIER ]
+STATEMENT_LIST''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST'' , float ]
+STATEMENT_LIST''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST'' , if ]
+STATEMENT_LIST''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST'' , int ]
+STATEMENT_LIST''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST'' , while ]
+STATEMENT_LIST''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST''' , $ ]
+STATEMENT_LIST'''---> SYNCH
+*******************************************
+Table[ STATEMENT_LIST''' , ( ]
+STATEMENT_LIST'''---> (EXPRESSION)EXPRESSION'){STATEMENT}else{STATEMENT}STATEMENT_LIST''''''''''
+*******************************************
+Table[ STATEMENT_LIST''' , IDENTIFIER ]
+STATEMENT_LIST'''---> IDENTIFIEREXPRESSION'){STATEMENT}else{STATEMENT}STATEMENT_LIST''''''''
+*******************************************
+Table[ STATEMENT_LIST''' , NUMBER ]
+STATEMENT_LIST'''---> NUMBEREXPRESSION'){STATEMENT}else{STATEMENT}STATEMENT_LIST'''''
+*******************************************
+Table[ STATEMENT_LIST'''' , $ ]
+STATEMENT_LIST''''---> \L
+*******************************************
+Table[ STATEMENT_LIST'''' , IDENTIFIER ]
+STATEMENT_LIST''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST'''' , float ]
+STATEMENT_LIST''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST'''' , if ]
+STATEMENT_LIST''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST'''' , int ]
+STATEMENT_LIST''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST'''' , while ]
+STATEMENT_LIST''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST''''' , $ ]
+STATEMENT_LIST'''''---> \L
+*******************************************
+Table[ STATEMENT_LIST''''' , IDENTIFIER ]
+STATEMENT_LIST'''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST''''' , float ]
+STATEMENT_LIST'''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST''''' , if ]
+STATEMENT_LIST'''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST''''' , int ]
+STATEMENT_LIST'''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST''''' , while ]
+STATEMENT_LIST'''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST'''''' , $ ]
+STATEMENT_LIST''''''---> \L
+*******************************************
+Table[ STATEMENT_LIST'''''' , IDENTIFIER ]
+STATEMENT_LIST''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST'''''' , float ]
+STATEMENT_LIST''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST'''''' , if ]
+STATEMENT_LIST''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST'''''' , int ]
+STATEMENT_LIST''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST'''''' , while ]
+STATEMENT_LIST''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST''''''' , $ ]
+STATEMENT_LIST'''''''---> \L
+*******************************************
+Table[ STATEMENT_LIST''''''' , IDENTIFIER ]
+STATEMENT_LIST'''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST''''''' , float ]
+STATEMENT_LIST'''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST''''''' , if ]
+STATEMENT_LIST'''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST''''''' , int ]
+STATEMENT_LIST'''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST''''''' , while ]
+STATEMENT_LIST'''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST'''''''' , $ ]
+STATEMENT_LIST''''''''---> \L
+*******************************************
+Table[ STATEMENT_LIST'''''''' , IDENTIFIER ]
+STATEMENT_LIST''''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST'''''''' , float ]
+STATEMENT_LIST''''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST'''''''' , if ]
+STATEMENT_LIST''''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST'''''''' , int ]
+STATEMENT_LIST''''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST'''''''' , while ]
+STATEMENT_LIST''''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST''''''''' , $ ]
+STATEMENT_LIST'''''''''---> \L
+*******************************************
+Table[ STATEMENT_LIST''''''''' , IDENTIFIER ]
+STATEMENT_LIST'''''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST''''''''' , float ]
+STATEMENT_LIST'''''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST''''''''' , if ]
+STATEMENT_LIST'''''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST''''''''' , int ]
+STATEMENT_LIST'''''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST''''''''' , while ]
+STATEMENT_LIST'''''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST'''''''''' , $ ]
+STATEMENT_LIST''''''''''---> \L
+*******************************************
+Table[ STATEMENT_LIST'''''''''' , IDENTIFIER ]
+STATEMENT_LIST''''''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST'''''''''' , float ]
+STATEMENT_LIST''''''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST'''''''''' , if ]
+STATEMENT_LIST''''''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST'''''''''' , int ]
+STATEMENT_LIST''''''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST'''''''''' , while ]
+STATEMENT_LIST''''''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST''''''''''' , $ ]
+STATEMENT_LIST'''''''''''---> \L
+*******************************************
+Table[ STATEMENT_LIST''''''''''' , IDENTIFIER ]
+STATEMENT_LIST'''''''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST''''''''''' , float ]
+STATEMENT_LIST'''''''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST''''''''''' , if ]
+STATEMENT_LIST'''''''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST''''''''''' , int ]
+STATEMENT_LIST'''''''''''---> STATEMENT_LIST
+*******************************************
+Table[ STATEMENT_LIST''''''''''' , while ]
+STATEMENT_LIST'''''''''''---> STATEMENT_LIST
+*******************************************
+Table[ WHILE , $ ]
+WHILE---> SYNCH
+*******************************************
+Table[ WHILE , IDENTIFIER ]
+WHILE---> SYNCH
+*******************************************
+Table[ WHILE , float ]
+WHILE---> SYNCH
+*******************************************
+Table[ WHILE , if ]
+WHILE---> SYNCH
+*******************************************
+Table[ WHILE , int ]
+WHILE---> SYNCH
+*******************************************
+Table[ WHILE , while ]
+WHILE---> while(WHILE'
+*******************************************
+Table[ WHILE , } ]
+WHILE---> SYNCH
+*******************************************
+Table[ WHILE' , $ ]
+WHILE'---> SYNCH
+*******************************************
+Table[ WHILE' , ( ]
+WHILE'---> (EXPRESSION)EXPRESSION'){WHILE''
+*******************************************
+Table[ WHILE' , IDENTIFIER ]
+WHILE'---> IDENTIFIEREXPRESSION'){WHILE''''
+*******************************************
+Table[ WHILE' , NUMBER ]
+WHILE'---> NUMBEREXPRESSION'){WHILE'''''''
+*******************************************
+Table[ WHILE' , float ]
+WHILE'---> SYNCH
+*******************************************
+Table[ WHILE' , if ]
+WHILE'---> SYNCH
+*******************************************
+Table[ WHILE' , int ]
+WHILE'---> SYNCH
+*******************************************
+Table[ WHILE' , while ]
+WHILE'---> SYNCH
+*******************************************
+Table[ WHILE' , } ]
+WHILE'---> SYNCH
+*******************************************
+Table[ WHILE'' , $ ]
+WHILE''---> SYNCH
+*******************************************
+Table[ WHILE'' , IDENTIFIER ]
+WHILE''---> IDENTIFIER=WHILE'''
+*******************************************
+Table[ WHILE'' , float ]
+WHILE''---> floatIDENTIFIER;}
+*******************************************
+Table[ WHILE'' , if ]
+WHILE''---> if(WHILE'''''
+*******************************************
+Table[ WHILE'' , int ]
+WHILE''---> intIDENTIFIER;}
+*******************************************
+Table[ WHILE'' , while ]
+WHILE''---> WHILE}
+*******************************************
+Table[ WHILE'' , } ]
+WHILE''---> SYNCH
+*******************************************
+Table[ WHILE''' , $ ]
+WHILE'''---> SYNCH
+*******************************************
+Table[ WHILE''' , ( ]
+WHILE'''---> (EXPRESSION)EXPRESSION';}
+*******************************************
+Table[ WHILE''' , IDENTIFIER ]
+WHILE'''---> IDENTIFIEREXPRESSION';}
+*******************************************
+Table[ WHILE''' , NUMBER ]
+WHILE'''---> NUMBEREXPRESSION';}
+*******************************************
+Table[ WHILE''' , float ]
+WHILE'''---> SYNCH
+*******************************************
+Table[ WHILE''' , if ]
+WHILE'''---> SYNCH
+*******************************************
+Table[ WHILE''' , int ]
+WHILE'''---> SYNCH
+*******************************************
+Table[ WHILE''' , while ]
+WHILE'''---> SYNCH
+*******************************************
+Table[ WHILE''' , } ]
+WHILE'''---> SYNCH
+*******************************************
+Table[ WHILE'''' , $ ]
+WHILE''''---> SYNCH
+*******************************************
+Table[ WHILE'''' , IDENTIFIER ]
+WHILE''''---> IDENTIFIER=WHILE''''''
+*******************************************
+Table[ WHILE'''' , float ]
+WHILE''''---> floatIDENTIFIER;}
+*******************************************
+Table[ WHILE'''' , if ]
+WHILE''''---> if(WHILE''''''''
+*******************************************
+Table[ WHILE'''' , int ]
+WHILE''''---> intIDENTIFIER;}
+*******************************************
+Table[ WHILE'''' , while ]
+WHILE''''---> WHILE}
+*******************************************
+Table[ WHILE'''' , } ]
+WHILE''''---> SYNCH
+*******************************************
+Table[ WHILE''''' , $ ]
+WHILE'''''---> SYNCH
+*******************************************
+Table[ WHILE''''' , ( ]
+WHILE'''''---> (EXPRESSION)EXPRESSION'){STATEMENT}else{STATEMENT}}
+*******************************************
+Table[ WHILE''''' , IDENTIFIER ]
+WHILE'''''---> IDENTIFIEREXPRESSION'){STATEMENT}else{STATEMENT}}
+*******************************************
+Table[ WHILE''''' , NUMBER ]
+WHILE'''''---> NUMBEREXPRESSION'){STATEMENT}else{STATEMENT}}
+*******************************************
+Table[ WHILE''''' , float ]
+WHILE'''''---> SYNCH
+*******************************************
+Table[ WHILE''''' , if ]
+WHILE'''''---> SYNCH
+*******************************************
+Table[ WHILE''''' , int ]
+WHILE'''''---> SYNCH
+*******************************************
+Table[ WHILE''''' , while ]
+WHILE'''''---> SYNCH
+*******************************************
+Table[ WHILE''''' , } ]
+WHILE'''''---> SYNCH
+*******************************************
+Table[ WHILE'''''' , $ ]
+WHILE''''''---> SYNCH
+*******************************************
+Table[ WHILE'''''' , ( ]
+WHILE''''''---> (EXPRESSION)EXPRESSION';}
+*******************************************
+Table[ WHILE'''''' , IDENTIFIER ]
+WHILE''''''---> IDENTIFIEREXPRESSION';}
+*******************************************
+Table[ WHILE'''''' , NUMBER ]
+WHILE''''''---> NUMBEREXPRESSION';}
+*******************************************
+Table[ WHILE'''''' , float ]
+WHILE''''''---> SYNCH
+*******************************************
+Table[ WHILE'''''' , if ]
+WHILE''''''---> SYNCH
+*******************************************
+Table[ WHILE'''''' , int ]
+WHILE''''''---> SYNCH
+*******************************************
+Table[ WHILE'''''' , while ]
+WHILE''''''---> SYNCH
+*******************************************
+Table[ WHILE'''''' , } ]
+WHILE''''''---> SYNCH
+*******************************************
+Table[ WHILE''''''' , $ ]
+WHILE'''''''---> SYNCH
+*******************************************
+Table[ WHILE''''''' , IDENTIFIER ]
+WHILE'''''''---> IDENTIFIER=WHILE'''''''''
+*******************************************
+Table[ WHILE''''''' , float ]
+WHILE'''''''---> floatIDENTIFIER;}
+*******************************************
+Table[ WHILE''''''' , if ]
+WHILE'''''''---> if(WHILE''''''''''
+*******************************************
+Table[ WHILE''''''' , int ]
+WHILE'''''''---> intIDENTIFIER;}
+*******************************************
+Table[ WHILE''''''' , while ]
+WHILE'''''''---> WHILE}
+*******************************************
+Table[ WHILE''''''' , } ]
+WHILE'''''''---> SYNCH
+*******************************************
+Table[ WHILE'''''''' , $ ]
+WHILE''''''''---> SYNCH
+*******************************************
+Table[ WHILE'''''''' , ( ]
+WHILE''''''''---> (EXPRESSION)EXPRESSION'){STATEMENT}else{STATEMENT}}
+*******************************************
+Table[ WHILE'''''''' , IDENTIFIER ]
+WHILE''''''''---> IDENTIFIEREXPRESSION'){STATEMENT}else{STATEMENT}}
+*******************************************
+Table[ WHILE'''''''' , NUMBER ]
+WHILE''''''''---> NUMBEREXPRESSION'){STATEMENT}else{STATEMENT}}
+*******************************************
+Table[ WHILE'''''''' , float ]
+WHILE''''''''---> SYNCH
+*******************************************
+Table[ WHILE'''''''' , if ]
+WHILE''''''''---> SYNCH
+*******************************************
+Table[ WHILE'''''''' , int ]
+WHILE''''''''---> SYNCH
+*******************************************
+Table[ WHILE'''''''' , while ]
+WHILE''''''''---> SYNCH
+*******************************************
+Table[ WHILE'''''''' , } ]
+WHILE''''''''---> SYNCH
+*******************************************
+Table[ WHILE''''''''' , $ ]
+WHILE'''''''''---> SYNCH
+*******************************************
+Table[ WHILE''''''''' , ( ]
+WHILE'''''''''---> (EXPRESSION)EXPRESSION';}
+*******************************************
+Table[ WHILE''''''''' , IDENTIFIER ]
+WHILE'''''''''---> IDENTIFIEREXPRESSION';}
+*******************************************
+Table[ WHILE''''''''' , NUMBER ]
+WHILE'''''''''---> NUMBEREXPRESSION';}
+*******************************************
+Table[ WHILE''''''''' , float ]
+WHILE'''''''''---> SYNCH
+*******************************************
+Table[ WHILE''''''''' , if ]
+WHILE'''''''''---> SYNCH
+*******************************************
+Table[ WHILE''''''''' , int ]
+WHILE'''''''''---> SYNCH
+*******************************************
+Table[ WHILE''''''''' , while ]
+WHILE'''''''''---> SYNCH
+*******************************************
+Table[ WHILE''''''''' , } ]
+WHILE'''''''''---> SYNCH
+*******************************************
+Table[ WHILE'''''''''' , $ ]
+WHILE''''''''''---> SYNCH
+*******************************************
+Table[ WHILE'''''''''' , ( ]
+WHILE''''''''''---> (EXPRESSION)EXPRESSION'){STATEMENT}else{STATEMENT}}
+*******************************************
+Table[ WHILE'''''''''' , IDENTIFIER ]
+WHILE''''''''''---> IDENTIFIEREXPRESSION'){STATEMENT}else{STATEMENT}}
+*******************************************
+Table[ WHILE'''''''''' , NUMBER ]
+WHILE''''''''''---> NUMBEREXPRESSION'){STATEMENT}else{STATEMENT}}
+*******************************************
+Table[ WHILE'''''''''' , float ]
+WHILE''''''''''---> SYNCH
+*******************************************
+Table[ WHILE'''''''''' , if ]
+WHILE''''''''''---> SYNCH
+*******************************************
+Table[ WHILE'''''''''' , int ]
+WHILE''''''''''---> SYNCH
+*******************************************
+Table[ WHILE'''''''''' , while ]
+WHILE''''''''''---> SYNCH
+*******************************************
+Table[ WHILE'''''''''' , } ]
+WHILE''''''''''---> SYNCH
+*******************************************
